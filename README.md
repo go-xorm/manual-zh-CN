@@ -22,6 +22,8 @@ xorm是一个简单而强大的Go语言ORM库. 通过它可以使数据库操作
 
 * 支持根据数据库自动生成xorm的结构体
 
+* 事件支持
+
 * 支持记录版本（即乐观锁）
 
 ## 驱动支持
@@ -52,7 +54,7 @@ xorm是一个简单而强大的Go语言ORM库. 通过它可以使数据库操作
 
 ## 文档
 
-* [快速开始](https://github.com/go-xorm/xorm/blob/master/docs/QuickStartCN.md)
+* [操作指南](http://xorm.io/docs)
 
 * [GoWalker代码文档](http://gowalker.org/github.com/go-xorm/xorm)
 
