@@ -38,6 +38,14 @@ xorm当前支持五种驱动四个数据库如下：
 
 NewEngine传入的参数和`sql.Open`传入的参数完全相同，因此，使用哪个驱动前，请查看此驱动中关于传入参数的说明文档。
 
+* [sqlite3](http://godoc.org/github.com/mattn/go-sqlite3#SQLiteDriver.Open)
+
+* [mysql dsn](https://github.com/go-sql-driver/mysql#dsn-data-source-name)
+
+* [mymysql](http://godoc.org/github.com/ziutek/mymysql/godrv#Driver.Open)
+
+* [postgres](http://godoc.org/github.com/lib/pq)
+
 在engine创建完成后可以进行一些设置，如：
 
 1.错误显示设置，默认如下均为`false`
