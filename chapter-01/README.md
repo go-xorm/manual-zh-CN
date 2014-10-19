@@ -1,6 +1,6 @@
 ## 创建Orm引擎
 
-在xorm里面，可以同时存在多个Orm引擎，一个Orm引擎称为Engine。因此在使用前必须调用NewEngine，如：
+在xorm里面，可以同时存在多个Orm引擎，一个Orm引擎称为Engine。因此在使用前必须调用`xorm.NewEngine`，如：
 
 ```Go
 import (
@@ -22,7 +22,7 @@ engine, err = xorm.NewEngine("sqlite3", "./test.db")
 defer engine.Close()
 ```
 
-你可以创建一个或多个engine, 不过一般如果操作一个数据库，只需要创建一个Engine即可。Engine支持在多GoRutine下使用。
+你可以创建一个或多个engine, 不过一般如果操作一个数据库，只需要创建一个Engine即可。每个Engine都支持在多GoRutine下使用。
 
 xorm当前支持五种驱动四个数据库如下：
 

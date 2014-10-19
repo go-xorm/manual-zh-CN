@@ -9,7 +9,7 @@ xorm支持两种方式的事件，一种是在Struct中的特定方法来作为�
 
 * BeforeDelete()
 
-* BeforeSet()
+* `func BeforeSet(name string, cell xorm.Cell)` 在 Get 或 Find 方法中，当数据已经从数据库查询出来，而在设置到结构体之前调用。
 
 * AfterInsert()
 
