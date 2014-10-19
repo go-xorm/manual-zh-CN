@@ -12,6 +12,7 @@
     * [表操作](chapter-03/2.tables.md)
     * [创建索引和唯一索引](chapter-03/3.indexes.md)
     * [同步数据库结构](chapter-03/4.sync.md)
+    * [导出导入SQL脚本](chapter-03/5.dumpimport.md)
 * [插入数据](chapter-04/README.md)
 * [查询和统计数据](chapter-05/README.md)
     * [查询条件方法](chapter-05/1.conditions.md)

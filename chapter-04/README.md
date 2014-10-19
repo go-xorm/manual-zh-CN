@@ -1,6 +1,7 @@
 ## 插入数据
 
 插入数据使用Insert方法，Insert方法的参数可以是一个或多个Struct的指针，一个或多个Struct的Slice的指针。
+
 如果传入的是Slice并且当数据库支持批量插入时，Insert会使用批量插入的方式进行插入。
 
 * 插入一条数据
@@ -17,7 +18,7 @@ affected, err := engine.Insert(user)
 fmt.Println(user.Id)
 ```
 
-* 插入同一个表的多条数据
+* 插入同一个表的多条数据，此时如果数据库支持批量插入，那么会进行批量插入，但是这样每条记录就无法被自动赋予id值。
 
 ```Go
 users := make([]User, 0)
@@ -26,7 +27,7 @@ users[0].Name = "name0"
 affected, err := engine.Insert(&users)
 ```
 
-* 使用指针Slice插入多条记录
+* 使用指针Slice插入多条记录，同上
 
 ```Go
 users := make([]*User, 0)
@@ -34,6 +35,16 @@ users[0] = new(User)
 users[0].Name = "name0"
 ...
 affected, err := engine.Insert(&users)
+```
+
+* 插入多条记录并且不使用批量插入，此时实际生成多条插入语句，每条记录均会自动赋予Id值。
+
+```Go
+users := make([]*User, 0)
+users[0] = new(User)
+users[0].Name = "name0"
+...
+affected, err := engine.Insert(users...)
 ```
 
 * 插入不同表的一条记录
