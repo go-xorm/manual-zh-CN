@@ -7,8 +7,13 @@ import (
     _ "github.com/go-sql-driver/mysql"
     "github.com/go-xorm/xorm"
 )
-engine, err := xorm.NewEngine("mysql", "root:123@/test?charset=utf8")
-defer engine.Close()
+
+var engine *xorm.Engine
+
+func main() {
+    var err error
+    engine, err = xorm.NewEngine("mysql", "root:123@/test?charset=utf8")
+}
 ```
 
 or
@@ -17,9 +22,14 @@ or
 import (
     _ "github.com/mattn/go-sqlite3"
     "github.com/go-xorm/xorm"
-    )
-engine, err = xorm.NewEngine("sqlite3", "./test.db")
-defer engine.Close()
+)
+
+var engine *xorm.Engine
+
+func main() {
+    var err error
+    engine, err = xorm.NewEngine("sqlite3", "./test.db")
+}
 ```
 
 一般情况下如果只操作一个数据库，只需要创建一个Engine即可。Engine是GoRutine安全的。
@@ -32,6 +42,8 @@ for i:=0;i<5;i++ {
     engines[i], err = xorm.NewEngine("sqlite3", fmt.Sprintf("./test%d.db", i))
 }
 ```
+
+engine可以通过engine.Close来手动关闭，但是一般情况下可以不用关闭，在程序退出时会自动关闭。
 
 NewEngine传入的参数和`sql.Open`传入的参数完全相同，因此，在使用某个驱动前，请查看此驱动中关于传入参数的说明文档。以下为各个驱动的连接符对应的文档链接：
 
