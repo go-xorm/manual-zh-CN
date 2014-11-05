@@ -8,7 +8,7 @@ xorm是一个简单而强大的Go语言ORM库. 通过它可以使数据库操作
 
 * 事务支持
 
-* 同时支持原始SQL语句和ORM操作的混合执行
+* 支持原始SQL语句和ORM操作的混合执行
 
 * 使用连写来简化调用
 
@@ -16,13 +16,13 @@ xorm是一个简单而强大的Go语言ORM库. 通过它可以使数据库操作
 
 * 支持级联加载Struct 
 
-* 支持LRU内存缓存 和 Redis缓存
+* 支持LRU缓存(支持memory, memcache, leveldb, redis缓存Store) 和 Redis缓存
 
 * 支持反转，即根据数据库自动生成xorm的结构体
 
-* 事件支持
+* 支持事件
 
-* 支持记录版本（即乐观锁）
+* 支持created, updated, deleted和version记录版本（即乐观锁）
 
 ## 驱动支持
 
