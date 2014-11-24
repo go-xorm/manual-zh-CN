@@ -1,5 +1,12 @@
 # 常见问题
 
+* 如何使用Like？
+
+答：
+```Go
+engine.Where("column like ?", "%"+char+"%").Find
+```
+
 * 怎么同时使用xorm的tag和json的tag？
   
 答：使用空格
