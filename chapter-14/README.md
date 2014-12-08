@@ -76,3 +76,6 @@ money float64 `xorm:"Numeric"`
 当然，如果Join语句比较复杂，我们也可以直接用Sql函数
 
     err := engine.Sql("select * from userinfo, userdetail where userinfo.detail_id = userdetail.id").Find(&users)
+
+* 如果有自动增长的字段，Insert如何写？
+答：Insert时，如果需要自增字段填充为自动增长的数值，请保持自增字段为0；如果自增字段为非0，自增字段将会被作为普通字段插入。

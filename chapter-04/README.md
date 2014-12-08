@@ -13,7 +13,7 @@ affected, err := engine.Insert(user)
 // INSERT INTO user (name) values (?)
 ```
 
-在插入单条数据成功后，如果该结构体有自增字段，则自增字段会被自动赋值为数据库中的id
+在插入单条数据成功后，如果该结构体有自增字段，则自增字段会被自动赋值为数据库中的id。这里需要注意的是，如果插入的结构体中，自增字段已经赋值，则该字段会被作为非自增字段插入。
 
 ```Go
 fmt.Println(user.Id)
