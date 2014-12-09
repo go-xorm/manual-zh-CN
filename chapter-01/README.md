@@ -34,6 +34,8 @@ func main() {
 
 一般情况下如果只操作一个数据库，只需要创建一个Engine即可。Engine是GoRutine安全的。
 
+创建完成`engine`之后，并没有立即连接数据库，此时可以通过`engine.Ping()`来进行数据库的连接测试是否可以连接到数据库。另外对于某些数据库有连接超时设置的，可以通过起一个定期Ping的Go程来保持连接鲜活。
+
 对于有大量数据并且需要分区的应用，也可以根据规则来创建多个Engine，比如：
 
 ```Go
@@ -72,6 +74,7 @@ f, err := os.Create("sql.log")
         println(err.Error())
         return
     }
+defer f.Close()
 engine.Logger = xorm.NewSimpleLogger(f)
 ```
 
