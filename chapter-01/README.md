@@ -1,6 +1,6 @@
 ## 创建Orm引擎
 
-在xorm里面，可以同时存在多个Orm引擎，一个Orm引擎称为Engine。Engine通过调用`xorm.NewEngine`生成，如：
+在xorm里面，可以同时存在多个Orm引擎，一个Orm引擎称为Engine，一个Engine一般只对应一个数据库。Engine通过调用`xorm.NewEngine`生成，如：
 
 ```Go
 import (
