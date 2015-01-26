@@ -1,5 +1,9 @@
 ## 更新日志
 
+* **v0.4.1**
+    新特性：
+    添加deleted标记作为软删除.
+
 * **v0.4.0 RC1** 
     新特性:
     * 移动xorm cmd [github.com/go-xorm/cmd](github.com/go-xorm/cmd)
