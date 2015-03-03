@@ -41,4 +41,4 @@ engine.ClearCache(new(User))
 
 缓存的实现原理如下图所示：
 
-![cache design](https://raw.github.com/go-xorm/xorm/master/docs/cache_design.png)
+![cache design](cache_design.png)
