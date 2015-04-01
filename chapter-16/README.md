@@ -1,8 +1,17 @@
 ## 更新日志
 
+* **v0.4.3**
+    * Json 字段类型支持
+    * oracle实验性支持
+    * bug修正
+
+* **v0.4.2**
+    * 事物如未Rollback或Commit，在关闭时会自动Rollback
+    * Gonic 映射支持
+    * bug修正
+
 * **v0.4.1**
-    新特性：
-    添加deleted标记作为软删除.
+    * 添加deleted标记作为软删除.
 
 * **v0.4.0 RC1** 
     新特性:
