@@ -2,5 +2,6 @@
 	"title": "XORM操作指南",
 	"author": "lunny",
 	"lang":"zh_CN",
-	"description":"XORM是一个简单而强大的Go语言ORM框架"
+	"description":"XORM是一个简单而强大的Go语言ORM框架",
+	"cover": "cover.jpg"
 }
