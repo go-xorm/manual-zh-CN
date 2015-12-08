@@ -8,7 +8,7 @@ engine.Where("column like ?", "%"+char+"%").Find
 ```
 
 * 怎么同时使用xorm的tag和json的tag？
-  
+
 答：使用空格
 
 ```Go
@@ -42,7 +42,7 @@ money float64 `xorm:"Numeric"`
 
 * xorm有几种命名映射规则？
 
-答：目前支持SnakeMapper和SameMapper两种。SnakeMapper支持结构体和成员以驼峰式命名而数据库表和字段以下划线连接命名；SameMapper支持结构体和数据库的命名保持一致的映射。
+答：目前支持SnakeMapper, SameMapper和GonicMapper三种。SnakeMapper支持结构体和成员以驼峰式命名而数据库表和字段以下划线连接命名；SameMapper支持结构体和数据库的命名保持一致的映射。GonicMapper在SnakeMapper的基础上对一些特定名词，比如ID的映射会映射为id，而不是像SnakeMapper那样为i_d。
 
 * xorm支持复合主键吗？
 
@@ -79,3 +79,10 @@ money float64 `xorm:"Numeric"`
 
 * 如果有自动增长的字段，Insert如何写？
 答：Insert时，如果需要自增字段填充为自动增长的数值，请保持自增字段为0；如果自增字段为非0，自增字段将会被作为普通字段插入。
+
+* 如果设置数据库时区？
+答：
+```Go
+location, err = time.LoadLocation("Asia/Shanghai")
+engine.TZLocation = location
+```
