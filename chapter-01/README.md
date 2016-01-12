@@ -63,7 +63,7 @@ NewEngine传入的参数和`sql.Open`传入的参数完全相同，因此，在�
 
 * `engine.ShowSQL = true`，则会在控制台打印出生成的SQL语句；
 * `engine.ShowDebug = true`，则会在控制台打印调试信息；
-* `engine.ShowError = true`，则会在控制台打印错误信息；
+* `engine.ShowErr = true`，则会在控制台打印错误信息；
 * `engine.ShowWarn = true`，则会在控制台打印警告信息；
 
 2.如果希望将信息不仅打印到控制台，而是保存为文件，那么可以通过类似如下的代码实现，`NewSimpleLogger(w io.Writer)`接收一个io.Writer接口来将数据写入到对应的设施中。
