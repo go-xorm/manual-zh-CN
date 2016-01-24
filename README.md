@@ -14,7 +14,7 @@ xorm是一个简单而强大的Go语言ORM库. 通过它可以使数据库操作
 
 * 支持使用Id, In, Where, Limit, Join, Having, Table, Sql, Cols等函数和结构体等方式作为条件
 
-* 支持级联加载Struct 
+* 支持级联加载Struct
 
 * 支持LRU缓存(支持memory, memcache, leveldb, redis缓存Store) 和 Redis缓存
 
@@ -32,17 +32,23 @@ xorm当前支持的驱动和数据库如下：
 
 * MyMysql: [github.com/ziutek/mymysql/godrv](https://github.com/ziutek/mymysql/godrv)
 
-* SQLite: [github.com/mattn/go-sqlite3](https://github.com/mattn/go-sqlite3)
-
 * Postgres: [github.com/lib/pq](https://github.com/lib/pq)
+
+* Tidb: [github.com/pingcap/tidb](https://github.com/pingcap/tidb)
+
+* SQLite: [github.com/mattn/go-sqlite3](https://github.com/mattn/go-sqlite3)
 
 * MsSql: [github.com/denisenkom/go-mssqldb](https://github.com/denisenkom/go-mssqldb)
 
 * MsSql: [github.com/lunny/godbc](https://github.com/lunny/godbc)
 
+* Oracle: [github.com/mattn/go-oci8](https://github.com/mattn/go-oci8) (试验性支持)
+
+* ql: [github.com/cznic/ql](https://github.com/cznic/ql) (试验性支持)
+
 ## 安装
 
-推荐使用 [gopm](https://github.com/gpmgo/gopm) 进行安装： 
+推荐使用 [gopm](https://github.com/gpmgo/gopm) 进行安装：
 
 	gopm get github.com/go-xorm/xorm
 
@@ -70,4 +76,3 @@ xorm当前支持的驱动和数据库如下：
 
 BSD License
 [http://creativecommons.org/licenses/BSD/](http://creativecommons.org/licenses/BSD/)
-
