@@ -1,5 +1,17 @@
 ## 更新日志
 
+* **v0.4.5**
+    * bug修正
+    * extends 支持无限级
+    * Delete Limit 支持
+
+* **v0.4.4**
+    * Tidb 数据库支持
+    * QL 试验性支持
+    * sql.NullString支持
+    * ForUpdate 支持
+    * bug修正
+
 * **v0.4.3**
     * Json 字段类型支持
     * oracle实验性支持
@@ -13,7 +25,7 @@
 * **v0.4.1**
     * 添加deleted标记作为软删除.
 
-* **v0.4.0 RC1** 
+* **v0.4.0 RC1**
     新特性:
     * 移动xorm cmd [github.com/go-xorm/cmd](github.com/go-xorm/cmd)
     * 在重构一般DB操作核心库 [github.com/go-xorm/core](https://github.com/go-xorm/core)
@@ -24,7 +36,7 @@
     * 添加 Incr API
     * 指定时区位置
 
-* **v0.3.2** 
+* **v0.3.2**
     改进:
     * Add AllCols & MustCols function
     * Add TableName for custom table name
@@ -36,12 +48,12 @@
     * #89
     * #86
     * #92
-    
+
 * **v0.3.1**
 
     新特性:
     * 支持 MSSQL DB 通过 ODBC 驱动 ([github.com/lunny/godbc](https://github.com/lunny/godbc));
-    * 通过多个pk标记支持联合主键; 
+    * 通过多个pk标记支持联合主键;
     * 新增 Rows() API 用来遍历查询结果，该函数提供了类似sql.Rows的相似用法，可作为 Iterate() API 的可选替代；
     * ORM 结构体现在允许内建类型的指针作为成员，使得数据库为null成为可能；
     * Before 和 After 支持

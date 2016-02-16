@@ -75,7 +75,7 @@ f, err := os.Create("sql.log")
         return
     }
 defer f.Close()
-engine.Logger = xorm.NewSimpleLogger(f)
+engine.SetLogger(xorm.NewSimpleLogger(f))
 ```
 
 3.engine内部支持连接池接口和对应的函数。
