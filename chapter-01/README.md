@@ -1,4 +1,4 @@
-## 创建Orm引擎
+# 创建Orm引擎
 
 在xorm里面，可以同时存在多个Orm引擎，一个Orm引擎称为Engine，一个Engine一般只对应一个数据库。Engine通过调用`xorm.NewEngine`生成，如：
 
@@ -59,26 +59,40 @@ NewEngine传入的参数和`sql.Open`传入的参数完全相同，因此，在�
 
 在engine创建完成后可以进行一些设置，如：
 
-1.调试，警告以及错误等显示设置，默认如下均为`false`
+## 日志
 
-* `engine.ShowSQL = true`，则会在控制台打印出生成的SQL语句；
-* `engine.ShowDebug = true`，则会在控制台打印调试信息；
-* `engine.ShowErr = true`，则会在控制台打印错误信息；
-* `engine.ShowWarn = true`，则会在控制台打印警告信息；
+日志是一个接口，通过设置日志，可以显示SQL，警告以及错误等，默认的显示级别为INFO。
 
-2.如果希望将信息不仅打印到控制台，而是保存为文件，那么可以通过类似如下的代码实现，`NewSimpleLogger(w io.Writer)`接收一个io.Writer接口来将数据写入到对应的设施中。
+* `engine.ShowSQL(true)`，则会在控制台打印出生成的SQL语句；
+* `engine.Logger().SetLevel(core.LOG_DEBUG)`，则会在控制台打印调试及以上的信息；
+
+如果希望将信息不仅打印到控制台，而是保存为文件，那么可以通过类似如下的代码实现，`NewSimpleLogger(w io.Writer)`接收一个io.Writer接口来将数据写入到对应的设施中。
 
 ```Go
 f, err := os.Create("sql.log")
-    if err != nil {
-        println(err.Error())
-        return
-    }
-defer f.Close()
+if err != nil {
+    println(err.Error())
+    return
+}
 engine.SetLogger(xorm.NewSimpleLogger(f))
 ```
 
-3.engine内部支持连接池接口和对应的函数。
+当然，如果希望将日志记录到syslog中，也可以如下：
+
+```Go
+logWriter, err := syslog.New(syslog.LOG_DEBUG, "rest-xorm-example")
+if err != nil {
+	log.Fatalf("Fail to create xorm system logger: %v\n", err)
+}
+
+logger := xorm.NewSimpleLogger(logWriter)
+logger.ShowSQL(true)
+engine.SetLogger(logger)
+```
+
+## 连接池
+
+engine内部支持连接池接口和对应的函数。
 
 * 如果需要设置连接池的空闲数大小，可以使用`engine.SetMaxIdleConns()`来实现。
 * 如果需要设置最大打开连接数，则可以使用`engine.SetMaxOpenConns()`来实现。
