@@ -22,7 +22,7 @@ fmt.Println(user.Id)
 * 插入同一个表的多条数据，此时如果数据库支持批量插入，那么会进行批量插入，但是这样每条记录就无法被自动赋予id值。如果数据库不支持批量插入，那么就会一条一条插入。
 
 ```Go
-users := make([]User, 0)
+users := make([]User, 1)
 users[0].Name = "name0"
 ...
 affected, err := engine.Insert(&users)
@@ -31,7 +31,7 @@ affected, err := engine.Insert(&users)
 * 使用指针Slice插入多条记录，同上
 
 ```Go
-users := make([]*User, 0)
+users := make([]*User, 1)
 users[0] = new(User)
 users[0].Name = "name0"
 ...
@@ -41,7 +41,7 @@ affected, err := engine.Insert(&users)
 * 插入多条记录并且不使用批量插入，此时实际生成多条插入语句，每条记录均会自动赋予Id值。
 
 ```Go
-users := make([]*User, 0)
+users := make([]*User, 1)
 users[0] = new(User)
 users[0].Name = "name0"
 ...
@@ -61,10 +61,10 @@ affected, err := engine.Insert(user, question)
 * 插入不同表的多条记录
 
 ```Go
-users := make([]User, 0)
+users := make([]User, 1)
 users[0].Name = "name0"
 ...
-questions := make([]Question, 0)
+questions := make([]Question, 1)
 questions[0].Content = "whywhywhwy?"
 affected, err := engine.Insert(&users, &questions)
 ```
@@ -74,7 +74,7 @@ affected, err := engine.Insert(&users, &questions)
 user := new(User)
 user.Name = "myname"
 ...
-questions := make([]Question, 0)
+questions := make([]Question, 1)
 questions[0].Content = "whywhywhwy?"
 affected, err := engine.Insert(user, &questions)
 ```
