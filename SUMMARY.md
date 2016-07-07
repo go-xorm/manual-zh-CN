@@ -24,6 +24,7 @@
     * [Iterate方法](chapter-05/6.iterate.md)
     * [Count方法](chapter-05/7.count.md)
     * [Rows方法](chapter-05/8.rows.md)
+    * [Sum系列方法](chapter-05/9.sums.md)
 * [更新数据](chapter-06/README.md)
     * [乐观锁Version](chapter-06/1.lock.md)
     * [更新时间Updated](chapter-06/2.updated.md)
