@@ -19,6 +19,7 @@
     * [查询条件方法](chapter-05/1.conditions.md)
     * [临时开关方法](chapter-05/2.overrides.md)
     * [Get方法](chapter-05/3.get.md)
+    * [Exist方法](chapter-05/10.exist.md)
     * [Find方法](chapter-05/4.find.md)
     * [Join的使用](chapter-05/5.join.md)
     * [Iterate方法](chapter-05/6.iterate.md)
