@@ -1,5 +1,43 @@
 ## 更新日志
 
+* **v0.6.5**
+    * 通过 engine.SetSchema 来支持 schema，当前仅支持Postgres
+    * vgo 支持
+    * 新增 FindAndCount 函数
+    * 通过 NewEngineWithParams 支持数据库特别参数
+    * 修正部分Bug
+
+* **v0.6.4**
+    * 自动读写分离支持
+    * Query/QueryString/QueryInterface 支持与 Where/And 合用
+    * Get 支持获取非结构体变量
+    * Iterate 支持 BufferSize  
+    * 修正部分Bug
+
+* **v0.6.3**
+    * 合并单元测试到主工程
+    * 新增`Exist`方法
+    * 新增`SumInt`方法
+    * Mysql新增读取和创建字段注释支持
+    * 新增`SetConnMaxLifetime`方法
+    * 修正了时间相关的Bug
+    * 修复了一些其它Bug
+
+* **v0.6.2**
+    * 重构Tag解析方式
+    * Get方法新增类似Scan的特性
+    * 新增 QueryString 方法
+
+* **v0.6.0**
+    * 去除对 ql 的支持
+    * 新增条件查询分析器 [github.com/go-xorm/builder](https://github.com/go-xorm/builder), 从因此 `Where, And, Or` 函数将可以用 `builder.Cond` 作为条件组合
+    * 新增 Sum, SumInt, SumInt64 和 NotIn 函数
+    * Bug修正
+
+* **v0.5.0**
+    * logging接口进行不兼容改变
+    * Bug修正
+
 * **v0.4.5**
     * bug修正
     * extends 支持无限级
