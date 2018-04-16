@@ -4,25 +4,29 @@ xorm是一个简单而强大的Go语言ORM库. 通过它可以使数据库操作
 
 ## 特性
 
-* 支持Struct和数据库表之间的灵活映射，并支持自动同步表结构
+* 支持Struct和数据库表之间的灵活映射，并支持自动同步
 
 * 事务支持
 
-* 支持原始SQL语句和ORM操作的混合执行
+* 同时支持原始SQL语句和ORM操作的混合执行
 
 * 使用连写来简化调用
 
-* 支持使用Id, In, Where, Limit, Join, Having, Table, Sql, Cols等函数和结构体等方式作为条件
+* 支持使用Id, In, Where, Limit, Join, Having, Table, SQL, Cols等函数和结构体等方式作为条件
 
 * 支持级联加载Struct
 
-* 支持LRU缓存(支持memory, memcache, leveldb, redis缓存Store) 和 Redis缓存
+* Schema支持（仅Postgres）
 
-* 支持反转，即根据数据库自动生成xorm的结构体
+* 支持缓存
 
-* 支持事件
+* 支持根据数据库自动生成xorm的结构体
 
-* 支持created, updated, deleted和version记录版本（即乐观锁）
+* 支持记录版本（即乐观锁）
+
+* 内置SQL Builder支持
+
+* 通过EngineGroup支持读写分离和负载均衡
 
 ## 驱动支持
 
