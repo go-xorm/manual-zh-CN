@@ -2,7 +2,8 @@
 
 * [创建Orm引擎](chapter-01/README.md)
     * [单库引擎](chapter-01/1.engine.md)
-    * [读写分离](chapter-01/2.engine_group.md)
+    * [引擎组](chapter-01/2.engine_group.md)
+    * [引擎组策略](chapter-01/3.policy.md)
 * [定义表结构体](chapter-02/README.md)
     * [名称映射规则](chapter-02/1.mapping.md)
     * [前缀映射，后缀映射和缓存映射](chapter-02/2.prefix.md)
