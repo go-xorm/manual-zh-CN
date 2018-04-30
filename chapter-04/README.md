@@ -45,7 +45,12 @@ users := make([]*User, 1)
 users[0] = new(User)
 users[0].Name = "name0"
 ...
-affected, err := engine.Insert(users...)
+userInterfaces := make([]interface{}, len(users))
+for i := 0; i < len(users); i++ {
+	userInterfaces[i] = users[i]
+}
+
+affected, err := engine.Insert(userInterfaces...)
 ```
 
 * 插入不同表的一条记录
