@@ -2,19 +2,11 @@
 
 xorm 是一组数据库操作命令行工具。 
 
-## 二进制安装
-
-如果你安装了 [got](https://github.com/gobuild/got)，你可以输入如下命令安装：
-
-```
-got go-xorm/cmd/xorm
-```
-
-或者你可以从 [gobuild](http://gobuild.io/download/github.com/lunny/got) 下载后解压到可执行路径。
-
 ## 源码安装
 
-`go get github.com/go-xorm/cmd/xorm`
+```go
+go get xorm.io/cmd/xorm
+```
 
 同时你需要安装如下依赖:
 
