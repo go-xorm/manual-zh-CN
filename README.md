@@ -52,13 +52,9 @@ xorm当前支持的驱动和数据库如下：
 
 ## 安装
 
-推荐使用 [gopm](https://github.com/gpmgo/gopm) 进行安装：
-
-	gopm get github.com/go-xorm/xorm
-
-或者您也可以使用go工具进行安装：
-
-	go get github.com/go-xorm/xorm
+```go
+go get xorm.io/xorm
+```
 
 ## 文档
 
